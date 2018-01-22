@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:ListToGridView" x:Class="ListToGridView.ListToGridViewPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical">
+			<StackLayout Orientation="Horizontal">
+				<Label x:Name="title" Margin="10" FontSize="30" Text="Grid Format Data" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+			<Switch x:Name="swit" HorizontalOptions="EndAndExpand" VerticalOptions="Center" IsToggled="true" Margin="50" />
+				</StackLayout>
+			<flv:FlowListView x:Name="imageList" SeparatorVisibility="Default" HasUnevenRows="true" FlowColumnCount="3">
+				<flv:FlowListView.FlowColumnTemplate>
+					<DataTemplate>
+						<Grid Margin="10,0,10,0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="10" />
+							</Grid.ColumnDefinitions>
+							<Image x:Name="img" Source="{Binding Path=ImageName}" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" />
+						</Grid>
+					</DataTemplate>
+				</flv:FlowListView.FlowColumnTemplate>
+			</flv:FlowListView>
+			<ListView x:Name="imageListView"  IsVisible="false" HasUnevenRows="true" SeparatorVisibility="None">
+				<ListView.ItemTemplate>
+					<DataTemplate x:Key="ListViewTemplate">
+						<ViewCell>
+							<ViewCell.View>
+								<StackLayout Orientation="Vertical" Spacing="20">
+									<Image x:Name="img" Source="{Binding Path=ImageName}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20" />
+								</StackLayout>
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

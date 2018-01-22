@@ -1,0 +1,13 @@
+﻿<Properties StartupConfiguration="{A946DEA8-4091-484C-B076-BC99579AC180}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.ItemProperties.ListToGridView.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.598FAF33-EED1-4948-B082-2F4E5F51113A" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ListToGridView.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/isharani/Projects/ListToGridView/ListToGridView/Models/LsitviewProperties.cs" relfile="ListToGridView/Models/LsitviewProperties.cs" line="15" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
