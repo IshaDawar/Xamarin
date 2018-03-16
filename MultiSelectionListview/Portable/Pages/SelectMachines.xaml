@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Mark21;assembly=Mark21"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Mark21.SelectMachines">
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SelectedToColorConverter x:Key="cnvInvert"/>
+         </ResourceDictionary>
+    </ContentPage.Resources>
+	<ContentPage.Content>
+		<Grid HorizontalOptions="FillAndExpand" BackgroundColor="White" VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid Grid.Row="0" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<local:AppNavigationHeader x:Name="appHeader" HorizontalOptions="FillAndExpand" Grid.Row="0" BackgroundColor="Red" HeaderTitle="{x:Static local:Constant.SelectMachinesLabel}" />
+				<StackLayout Orientation="Vertical" Grid.Row="1">
+					<Label  x:Name="lblClrList" Text="{x:Static local:Constant.ClearAllText}" Style="{StaticResource fontStyle2}" Margin="0,10,0,0" HorizontalOptions="End" TextColor="{x:Static local:Constant.Labelcolor}" />
+					<ListView x:Name="listview" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="None">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<local:CustomCell>
+									<StackLayout Orientation="Vertical" Margin="15">
+										<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  BackgroundColor="White">
+											<Label HorizontalOptions="StartAndExpand" Text="{Binding Item.Name}" Style="{StaticResource fontStyle2}" TextColor="{Binding IsSelected, Converter={StaticResource cnvInvert}}}" Margin="0,10,0,5" VerticalOptions="Center" />
+											<Image Source="{x:Static local:Constant.CheckedImage}" HorizontalOptions="End" IsVisible="{Binding IsSelected}" VerticalOptions="Center" />
+											<Image Source="{x:Static local:Constant.UnCheckedImage}" HorizontalOptions="End" IsVisible="{Binding IsNotSelected}" VerticalOptions="Center" />
+										</StackLayout>
+										<BoxView HeightRequest="1" Color="{x:Static local:Constant.BoxViewColor}"/>
+									</StackLayout>
+								</local:CustomCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+				</StackLayout>
+			</Grid>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
