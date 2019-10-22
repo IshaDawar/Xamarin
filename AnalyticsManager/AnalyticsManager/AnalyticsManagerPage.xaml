@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AnalyticsManager" x:Class="AnalyticsManager.AnalyticsManagerPage">
+<StackLayout Orientation="Vertical">
+	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+	<Button x:Name="btnClick" Text="click here" Clicked="Handle_Clicked"></Button>
+		</StackLayout>
+</ContentPage>
